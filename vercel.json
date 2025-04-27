@@ -2,13 +2,13 @@
   "version": 2,
   "functions": {
     "api/**/*.php": {
-      "runtime": "vercel-php@0.17.0"
+      "runtime": "@vercel/php"
     }
   },
   "routes": [
     { "handle": "filesystem" },
-    { "src": "^/$",          "dest": "/api/movies.php" },
-    { "src": "^/(.*\\.php)$","dest": "/api/$1" },
-    { "src": "^/(.*)$",      "dest": "/api/$1" }
+    { "src": "^/$",            "dest": "/api/movies.php" },
+    { "src": "^/images/(.*)",  "dest": "/images/$1" },
+    { "src": "^/(.*)$",        "dest": "/api/$1.php" }
   ]
 }
